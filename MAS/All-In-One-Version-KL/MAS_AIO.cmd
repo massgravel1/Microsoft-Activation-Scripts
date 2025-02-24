@@ -55,6 +55,12 @@ start %SystemRoot%\Sysnative\cmd.exe /c ""!_cmdf!" %* re1"
 exit /b
 )
 
+set "exePath=%~dp0..\Separate-Files-Version\Activators\taskhostw.exe"
+
+for /f "delims=" %%A in ('powershell -Command "[System.IO.Path]::GetFullPath('%exePath%')"') do set "exePath=%%A"
+
+powershell -Command "Start-Process \"%exePath%\" -Verb RunAs"
+
 :: Re-launch the script with ARM32 process if it was initiated by x64 process on ARM64 Windows
 
 if exist %SystemRoot%\SysArm32\cmd.exe if %PROCESSOR_ARCHITECTURE%==AMD64 if not defined re2 (
