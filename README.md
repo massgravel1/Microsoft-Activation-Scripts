@@ -26,8 +26,6 @@
 
 ---
 
-### Not working ❓
-
 - If MAS is launched and the script shows any errors, check for any troubleshooting steps mentioned in blue color and try to follow those.
 - If you have any issues, please feel free to reach out to us [here](https://massgrave.dev/troubleshoot).
 
